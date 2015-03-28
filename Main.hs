@@ -83,6 +83,7 @@ wlp scopeId stmt q =
     case stmt of
         Skip ->
             q
+        --doesn't work correctly yet on return statements
         ["return"] := [e] ->
             Replace ["return"] [e] (onlyPost q)
         x :=  e ->
